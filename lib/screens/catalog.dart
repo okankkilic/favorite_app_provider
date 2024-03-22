@@ -6,17 +6,17 @@ import '../model/cart.dart';
 
 class MyCatalog extends StatelessWidget {
   List<Item> catalogitems = [
-    Item(0, 'Apple', 1),
-    Item(1, 'Egg', 1),
-    Item(2, 'Oat', 1),
-    Item(3, 'Bread', 1),
-    Item(4, 'Yogurt', 1),
-    Item(5, 'Avocado', 1),
-    Item(6, 'Peanut', 1),
-    Item(7, 'Almond', 1),
-    Item(8, 'Chocolate', 1),
-    Item(9, 'Chia Seed', 1),
-    Item(10, 'Banana', 1),
+    Item(0, 'Apple', 4),
+    Item(1, 'Egg', 12),
+    Item(2, 'Oat', 5),
+    Item(3, 'Bread', 2),
+    Item(4, 'Yogurt', 3),
+    Item(5, 'Avocado', 4),
+    Item(6, 'Peanut Butter', 7),
+    Item(7, 'Almond', 6),
+    Item(8, 'Chocolate', 12),
+    Item(9, 'Chia Seed', 15),
+    Item(10, 'Banana', 2),
   ];
 
   @override
@@ -28,7 +28,7 @@ class MyCatalog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
-              'What do you\nwant to buy?',
+              'What is your\nfavorite food?',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
             ),
             Container(

@@ -51,7 +51,7 @@ class CartScreen extends StatelessWidget {
                         },
                         icon: const Icon(
                           Icons.add_shopping_cart,
-                          color: Colors.blue,
+                          color: Colors.indigo,
                           size: 20,
                         ),
                       ),
@@ -64,20 +64,20 @@ class CartScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const Text(
-                      'Hey there check \nyour items in cart',
+                      'Let\'s check \nyour foods in cart',
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.71,
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.70,
                       child: Column(
                         children: <Widget>[
-                          Container(
+                          const SizedBox(
                             height: 20,
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Text(
@@ -97,14 +97,14 @@ class CartScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             height:
                                 (MediaQuery.of(context).size.height * 0.74) -
                                     100,
                             child: ListView.builder(
-                              padding: EdgeInsets.zero,
+                              //padding: const EdgeInsets.all(18),
                               itemBuilder: (BuildContext context, int index) {
-                                return Container(
+                                return SizedBox(
                                   height: 60,
                                   width: MediaQuery.of(context).size.width,
                                   child: Consumer<CartModel>(
@@ -115,8 +115,14 @@ class CartScreen extends StatelessWidget {
                                         Expanded(
                                           child: Text(
                                             cart.items[index].name,
+                                            style:
+                                                const TextStyle(fontSize: 16),
                                           ),
                                         ),
+                                        Text(
+                                          '${cart.items[index].price} \$',
+                                          style: const TextStyle(fontSize: 16),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -127,7 +133,7 @@ class CartScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 40,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -139,7 +145,7 @@ class CartScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                    '${Provider.of<CartModel>(context, listen: false).totalPrice}')
+                                    '${Provider.of<CartModel>(context, listen: false).totalPrice} \$')
                               ],
                             ),
                           ),
@@ -160,7 +166,7 @@ class CartScreen extends StatelessWidget {
                         child: const Center(
                           child: Text(
                             'Clear Cart',
-                            style: TextStyle(color: Colors.white, fontSize: 15),
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                       ),
